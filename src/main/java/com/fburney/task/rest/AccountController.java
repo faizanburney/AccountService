@@ -14,6 +14,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -55,12 +56,13 @@ public class AccountController {
 
     @Operation(summary = "Creates a new Account with zero balance")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Updated the Account")})
+            @ApiResponse(responseCode = "201", description = "Account is created successfully")})
     @PostMapping
     public ResponseEntity saveAccounts(@RequestBody AccountParameter account)
     {
         accountService.saveAccount(account);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Account is created successfully");
     }
 
     @Operation(summary = "Updates the Account Info but not balance")
