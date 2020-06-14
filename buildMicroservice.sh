@@ -1,3 +1,3 @@
-source ./MicroserviceSettings.sh
+source ./microserviceSettings.sh
 source ./buildMicroserviceLib.sh
 
