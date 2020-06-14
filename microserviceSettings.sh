@@ -1,10 +1,10 @@
 declare -A microservicesFolders
 
-microservicesFolders[task]="."
+microservicesFolders[task]="./"
 
 declare -A microservicesDockerNames
 
-microservicesDockerNames[task]="task-account"
+microservicesDockerNames[task]="task-accounts"
 
 dockerComposeFileName=support.yml
 allServicesNames="task"
