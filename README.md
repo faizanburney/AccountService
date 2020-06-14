@@ -28,13 +28,17 @@ docker compose.
 You need to have Docker,Gradle and docker-compose installed in your host machine before running them.
 
 To build/run/stop docker, follow these steps:
+
  build:
+ 
   ./buildMicroservice.sh all
   
  run :
+ 
   ./runMicroservice.sh all
   
  stop:
+ 
  ./stopMicroservice.sh all
 
 
