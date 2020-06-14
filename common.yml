@@ -1,0 +1,20 @@
+version: '2'
+services:
+    commonsettings:
+        environment:
+            - SPRING_PROFILES_ACTIVE
+            - JAVA_MAX_MEMORY=100m
+            - SECURITY_BASIC_ENABLE=false
+            - MANAGEMENT_SECURITY_ENABLED=false
+        build:
+            args:
+                userid: 1002
+                username: backenduser
+        volumes:
+            - /var/log/fr-ldp/application:/consolidatedLogFileDir
+        network_mode: host
+        logging:
+          driver: "json-file"
+          options:
+            max-size: "50m"
+            max-file: "2"

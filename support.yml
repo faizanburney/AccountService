@@ -1,0 +1,9 @@
+version: '2'
+services:
+  ########  Account task ########   
+  task-accounts:
+    container_name: task-accounts
+    build: ./
+    extends:
+        file: ./common.yml
+        service: commonsettings
