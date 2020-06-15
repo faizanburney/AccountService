@@ -26,7 +26,7 @@ cd ${microservicesFolders[$argServices]}
 echo deleting ...build jars
 rm build/libs/*.jar
 echo building the microservice
-gradle build 
+./gradlew build 
 echo coming back to microservice directory... ${currentDir}
 cd ${currentDir}
 echo docker-compose -f $dockerComposeFileName build ${microservicesDockerNames[$argServices]} 
