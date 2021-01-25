@@ -1,6 +1,5 @@
 package com.fburney.task.exception;
 
-import com.fburney.task.service.currencyconversion.CurrencyNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.ConversionFailedException;
 import org.springframework.http.HttpStatus;
@@ -31,11 +30,5 @@ public class GlobalControllerExceptionHandler {
         return new ResponseEntity<>("Something went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(CurrencyNotFoundException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ResponseEntity<String> handleCNFExceptions(RuntimeException ex) {
-        log.error(ex.getMessage());
-        return new ResponseEntity<>("Invalid Currency Type", HttpStatus.BAD_REQUEST);
-    }
 
 }
